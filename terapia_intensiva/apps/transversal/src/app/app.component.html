@@ -1,0 +1,53 @@
+<div class="flex-item">
+  <mat-sidenav-container class="one">
+
+    <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+
+      <mat-list>
+        <mat-list-item>
+          <mat-icon matListItemIcon>account_circle</mat-icon>
+          <h4 matListItemTitle>Cuenta Demo</h4>
+          <p matListItemLine class="demo-2"> user@user.com </p>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+      </mat-list>
+      <mat-nav-list dense>
+        <a mat-list-item routerLink="/">
+          <mat-icon matListItemIcon>dashboard</mat-icon>
+          Dashboard - Home
+        </a>
+        <a mat-list-item routerLink="reports">
+          <mat-icon matListItemIcon>account_balance_wallet</mat-icon>
+          Reportes financieros
+        </a>
+        <a mat-list-item routerLink="about">
+          <mat-icon matListItemIcon>accessible</mat-icon>
+          Reportes de pacientes
+        </a>
+        <a mat-list-item routerLink="/admin/pictures">
+          <mat-icon matListItemIcon>assignment</mat-icon>
+          modulos a trabajar
+        </a>
+        <a mat-list-item>
+          <mat-icon matListItemIcon>published_with_changes</mat-icon>
+          change
+        </a>
+        <a mat-list-item>
+          <mat-icon matListItemIcon>logout</mat-icon>
+          Logout
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <h3>Terapia Intensiva Project</h3>
+      </mat-toolbar>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
