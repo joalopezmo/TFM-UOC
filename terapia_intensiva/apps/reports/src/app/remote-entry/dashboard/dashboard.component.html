@@ -1,6 +1,9 @@
 <div class="grid-container">
     <h1 class="mat-h1">Hello, Manager</h1>
-    <button mat-raised-button color="primary" (click)="callApi()">Llamar la api</button>
+    <button mat-raised-button color="warn" (click)="callApi()">Recargar</button>
+    <br />
+    <br />
+    <br />
     <mat-grid-list cols="2" rowHeight="350px">
         <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
             <mat-card appearance="outlined" class="dashboard-card">

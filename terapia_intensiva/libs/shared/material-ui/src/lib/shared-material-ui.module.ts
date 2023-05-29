@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
@@ -34,6 +35,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatTableModule,
     MatPaginatorModule,
     MatExpansionModule,
+    MatDividerModule,
   ],
   exports: [
     LayoutModule,
@@ -47,6 +49,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatMenuModule,
     MatInputModule,
     MatSelectModule,
+    MatDividerModule,
     MatRadioModule,
     MatTableModule,
     MatPaginatorModule,
