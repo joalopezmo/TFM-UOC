@@ -1,4 +1,4 @@
 module.exports = {
   name: 'transversal',
-  remotes: ['reports', 'about'],
+  remotes: ['reports', 'about', 'todo'],
 };
