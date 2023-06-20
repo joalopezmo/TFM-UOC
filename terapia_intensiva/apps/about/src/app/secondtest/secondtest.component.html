@@ -1,12 +1,12 @@
 <div class="grid-container">
-    <h1 class="mat-h1">Hello, Manager</h1>
+    <h1 class="mat-h1">Hola, Gerente</h1>
     <button mat-raised-button color="primary" (click)="callApi()">Llamar la api</button>
     <mat-grid-list cols="2" rowHeight="350px">
-        <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
             <mat-card appearance="outlined" class="dashboard-card">
                 <mat-card-header>
                     <mat-card-title>
-                        {{card.title}}
+                        Informacion de la unidad
                         <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
                             <mat-icon>more_vert</mat-icon>
                         </button>
@@ -17,39 +17,37 @@
                     </mat-card-title>
                 </mat-card-header>
                 <mat-card-content class="dashboard-card-content">
-                    <div>Card Content Here</div>
-                    <div class="grid-container">
-                        <h1 class="mat-h1">Hola, Gerente</h1>
-                        <button mat-raised-button color="primary" (click)="callApi()">Llamar la api</button>
-                        <mat-grid-list cols="2" rowHeight="350px">
-                            <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols"
-                                [rowspan]="card.rows">
-                                <mat-card appearance="outlined" class="dashboard-card">
-                                    <mat-card-header>
-                                        <mat-card-title>
-                                            {{card.title}}
-                                            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu"
-                                                aria-label="Toggle menu">
-                                                <mat-icon>more_vert</mat-icon>
-                                            </button>
-                                            <mat-menu #menu="matMenu" xPosition="before">
-                                                <button mat-menu-item>Expand</button>
-                                                <button mat-menu-item>Remove</button>
-                                            </mat-menu>
-                                        </mat-card-title>
-                                    </mat-card-header>
-                                    <mat-card-content class="dashboard-card-content">
-                                        <div>Card Content Here</div>
-                                        <canvas baseChart class="chart" [data]="radarChartData"
-                                            [options]="radarChartOptions" [type]="radarChartType">
-                                        </canvas>
-                                    </mat-card-content>
-                                </mat-card>
-                            </mat-grid-tile>
-                        </mat-grid-list>
-                    </div>
+                    <div>Ocupacion mensual Unidades</div>
+                    <ngx-charts-line-chart [results]="single" [gradient]="gradient" [xAxis]="showXAxis" [view]="view"
+                        [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel"
+                        (select)="onSelect($event)" [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel"
+                        [yAxisLabel]="yAxisLabel">
+                    </ngx-charts-line-chart>
                 </mat-card-content>
             </mat-card>
         </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="">
+            <mat-card appearance="outlined" class="dashboard-card">
+                <mat-card-header>
+                    <mat-card-title>
+                        Informacion de la unidad
+                        <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+                            <mat-icon>more_vert</mat-icon>
+                        </button>
+                        <mat-menu #menu="matMenu" xPosition="before">
+                            <button mat-menu-item>Expand</button>
+                            <button mat-menu-item>Remove</button>
+                        </mat-menu>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="dashboard-card-content">
+                    <div>Datos mensuales</div>
+                    <ngx-charts-number-card [results]="singleOne" [cardColor]="cardColor" [view]="view">
+                    </ngx-charts-number-card>
+                </mat-card-content>
+            </mat-card>
+        </mat-grid-tile>
+
+
     </mat-grid-list>
 </div>

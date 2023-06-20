@@ -13,6 +13,6 @@ export class MonthReportService {
 
   getMonthReport(): Observable<object> {
     //informacion mensual de los reportes
-    return this.http.get(`${this.baseUrl}` + '/ocupaciones');
+    return this.http.get(`${this.baseUrl}` + '/ocupacion');
   }
 }

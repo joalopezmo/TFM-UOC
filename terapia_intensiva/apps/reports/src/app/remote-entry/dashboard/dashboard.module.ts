@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { SharedMaterialUiModule } from '@terapia-intensiva/shared/material-ui';
 import { NgChartsConfiguration, NgChartsModule } from 'ng2-charts';
 
@@ -20,6 +21,7 @@ const DASHBOARDROUTES: Routes = [
     CommonModule,
     SharedMaterialUiModule,
     NgChartsModule,
+    NgxChartsModule,
     HttpClientModule,
     ColorPickerModule,
     RouterModule.forChild(DASHBOARDROUTES),

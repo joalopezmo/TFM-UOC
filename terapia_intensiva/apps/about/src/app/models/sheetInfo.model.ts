@@ -1,5 +1,5 @@
 export class sheetInfo {
   headers!: Array<string>;
-  numberRaw!: number;
+  numberRaw!: Array<string>;
   rawData!: Array<string>;
 }
